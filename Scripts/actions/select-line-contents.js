@@ -4,13 +4,13 @@
  * Selects the current lines (excluding leading and trailing whitespace)
  */
 
-const {getTrimmedRange} = require('../utils.js')
+const { getTrimmedRange } = require("../utils.js");
 
-nova.commands.register('handy.selectLineContents', editor => {
-	const newSelectedRanges = []
-	for (const range of editor.selectedRanges) {
-		const lineRange = editor.getLineRangeForRange(range)
-		newSelectedRanges.push(getTrimmedRange(lineRange, editor))
-	}
-	editor.selectedRanges = newSelectedRanges
-})
+nova.commands.register("selectLineContents.selectLineContents", (editor) => {
+  const newSelectedRanges = [];
+  for (const range of editor.selectedRanges) {
+    const lineRange = editor.getLineRangeForRange(range);
+    newSelectedRanges.push(getTrimmedRange(lineRange, editor));
+  }
+  editor.selectedRanges = newSelectedRanges;
+});
